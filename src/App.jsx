@@ -1,29 +1,31 @@
-import { useState } from "react";
-import AccordianContent from "./AccordianContent";
+import Question from "./Question.jsx"
 
 function App() {
-  const [isAccordHidden, setIsAccordHidden] = useState(
+  const questions = [
     {
-    top:true,
-    bottom:true
-    }
-    );
-
-  const toggleTopAccordian = () => {
-    setIsAccordHidden((prev) => {
-      return { ...prev, top: !prev.top };
-    });
-  };
-
-  const toggleBttomAccordian = () => {
-    setIsAccordHidden((prev) => {
-      return { ...prev, bottom: !prev.bottom };
-    });
-  };
+      id: 1,
+      title: "what is this ?",
+      info: "This is a accordian component in React ",
+    },
+    {
+      id: 2,
+      title: "What is your name ?",
+      info: "My name is Ranjan Mehta",
+    },
+  ];
 
   return (
-    <>
-      <div className="accordian">
+    <section>
+      <h1> Accordian /Faq Component</h1>
+      <h2>questions and answers</h2>
+
+      <div className="main">
+        {questions.map((question) => {
+          return <Question question={question} key={question.id} />;
+        })}
+      </div>
+      
+      {/* <div className="accordian">
         <h4>
           accordian top
           <button onClick={toggleTopAccordian}>
@@ -40,8 +42,8 @@ function App() {
           </button>
         </h4>
         {isAccordHidden.bottom ? "" : <AccordianContent />}
-      </div>
-    </>
+      </div> */}
+    </section>
   );
 }
 

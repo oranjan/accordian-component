@@ -1,19 +1,26 @@
-html,body{
+html, body {
     margin: 0;
+    font-family: 'Arial', sans-serif; /* Choose an appropriate font-family */
+    font-size: 16px; /* Adjust the base font size as needed */
+    line-height: 1.5; /* Set the line height for better readability */
+    color: #333; /* Set a default text color */
 }
-.accordian{
+
+section {
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background-color: brown;
-    padding: 10px;
-    color: white;
+    padding: 20px; /* Add padding to the section for spacing */
 }
-button{
-    background-color: brown;
+
+button {
     border: none;
- 
+    padding: 10px 20px; /* Add padding to the button for spacing */
+    font-size: 14px; /* Adjust the button font size as needed */
+    cursor: pointer;
 }
-.accordian-content{
-    transition: opacity 1s ease-in-out;
+
+.accordian-content {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between elements in the accordion content */
 }
